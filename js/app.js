@@ -10,14 +10,12 @@ var gameCount = 1;
 startButton = document.querySelector('#btn__reset');
 startButton.addEventListener('click', function(){
     if(firstGame()){
-        console.log("what's up")
         game = new Game;
         game.startGame();
         gameCount = gameCount + 1;
         
     }
     if(!firstGame()){
-        console.log("with pluto")
         game.resetALL();
         game = new Game;
         game.startGame();
