@@ -99,7 +99,9 @@ class Game {
         }
     };
 
-
+    /**
+    * Resets the hearts, the used keys, and also takes away the phrase!
+    */
     resetALL(){
         let heartsToReset = document.querySelectorAll('.tries img[src="images/lostHeart.png"]').length;
         for (var i = 0; i < heartsToReset; ++i){

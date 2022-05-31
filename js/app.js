@@ -8,6 +8,7 @@
 var game;
 var gameCount = 1;
 startButton = document.querySelector('#btn__reset');
+//only resets if there is something to be reset! To avoid errors of resetting null properties.
 startButton.addEventListener('click', function(){
     if(firstGame()){
         game = new Game;
@@ -25,7 +26,7 @@ startButton.addEventListener('click', function(){
 
 
 uiKeyboard = document.querySelector('#qwerty');
-
+//listening for the uiKeyboard clicks!
 uiKeyboard.addEventListener('click', (e)  => {
     if(e.target.tagName === 'BUTTON') {
     game.handleInteraction(e.target);
