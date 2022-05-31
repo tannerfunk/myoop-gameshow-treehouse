@@ -24,7 +24,40 @@ class Phrase {
             createLetter.innerHTML =  this.phrase[i];
             phraseElement.append(createLetter);
         }
-
-
     }
+
+    /**
+    * Remove phrase on game board
+    */
+     removePhrase() {
+        const phraseList = document.querySelector('#phrase ul');
+        const phraseListLetters = phraseList.children;
+        [...phraseListLetters].forEach((letterElement, i) => {
+          phraseList.removeChild(letterElement);
+        });
+      }
+
+    /**
+     * check to see if the letter selected by the player matches a letter in the phrase.
+     */
+    checkLetter(letter){
+        return this.phrase.includes(letter);
+    }
+
+
+    /**
+    * Displays passed letter on screen after a match is found
+    * @param (string) letter - Letter to display
+    */
+    showMatchedLetter(letter){
+        var letterDomElements = document.querySelectorAll(`.${letter}`);
+        letterDomElements.forEach((letterDomElement,i) => {
+            if (letterDomElement.classList.contains(letter)) {
+                letterDomElement.classList.remove('hide');
+                letterDomElement.classList.add('show');
+            }
+        });
+    }
+
+
 }
